@@ -42,10 +42,10 @@ When you run `main.py`, the system provides two real-time outputs: a detailed te
 
 | Terminal Log (Live Simulation) | Real-Time Bar Chart (Volume) | Real-Time Pie Chart (Distribution) |
 | :---: | :---: | :---: |
-| ![Live Terminal Log](demo-log.png) | ![Live Bar Chart](demo-barchart.png) | ![Live Pie Chart](demo-piechart.png) |
+| ![Live Terminal Log](demo_assets/demo-log.png) | ![Live Bar Chart](demo_assets/demo-barchart.png) | ![Live Pie Chart](demo_assets/demo-piechart.png) |
 | A live feed showing vehicle counts, calculated volumes, and green light priority decisions. | A dynamic bar chart showing the weighted traffic volume for each road, updated every cycle. | A dynamic pie chart showing the percentage of traffic distribution across the 4 roads. |
 
-*(**Action:** Unggah screenshot dari PDF Anda ke repository ini dan ganti nama file `demo-log.png`, `demo-barchart.png`, dan `demo-piechart.png` di atas.)*
+*(**Catatan:** Pastikan Anda sudah membuat folder `demo_assets` dan mengunggah screenshot Anda ke sana seperti yang kita diskusikan sebelumnya agar gambar-gambar ini muncul.)*
 
 ---
 
@@ -100,7 +100,6 @@ This two-step process ensures the GPU version of PyTorch is installed *before* t
     ```powershell
     pip install -r requirements.txt
     ```
-    *(Note: The latest library versions appear to have fixed the old PyTorch 2.x/pickle loading error, so no code fix is needed.)*
 
 ### D. Run the Simulation!
 
@@ -109,5 +108,3 @@ You are now ready. Simply run `main.py`. The script will automatically find and 
 ```powershell
 (venv) PS C:\...[your-project-path]...\yolov5> python main.py
 ```
-
-The system will start, and you will see the terminal log printing detection results and `matplotlib` windows popping up with your live charts.
