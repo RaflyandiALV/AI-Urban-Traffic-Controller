@@ -38,14 +38,14 @@ The system's logic is cleanly separated into three main files:
 
 ## 3. Visual Demo & Output
 
-When you run `main.py`, the system provides two real-time outputs: a detailed terminal log and live data visualizations.
+When `main.py` runs, it provides live feedback through the terminal log and these pop-up visualizations:
 
-| Terminal Log (Live Simulation) | Real-Time Bar Chart (Volume) | Real-Time Pie Chart (Distribution) |
-| :---: | :---: | :---: |
-| ![Live Terminal Log](demo_assets/demo-log.png) | ![Live Bar Chart](demo_assets/demo-barchart.png) | ![Live Pie Chart](demo_assets/demo-piechart.png) |
-| A live feed showing vehicle counts, calculated volumes, and green light priority decisions. | A dynamic bar chart showing the weighted traffic volume for each road, updated every cycle. | A dynamic pie chart showing the percentage of traffic distribution across the 4 roads. |
+| Live Data Visualization (Charts) | Live Object Detection (YOLOv5) |
+| :---: | :---: |
+| ![Live Charts](demo_assets/demo-charts.png) | ![Live Detection GIF](demo_assets/demo-detection.gif) |
+| Real-time charts showing weighted volume (Bar) and traffic distribution (Pie). | A demo of the YOLOv5 model detecting and classifying vehicles. |
 
-*(**Catatan:** Pastikan Anda sudah membuat folder `demo_assets` dan mengunggah screenshot Anda ke sana seperti yang kita diskusikan sebelumnya agar gambar-gambar ini muncul.)*
+*(**Action:** Anda perlu membuat `demo-charts.png` (gabungan bar & pie chart) dan `demo-detection.gif` (GIF demo) dan mengunggahnya ke folder `demo_assets` Anda.)*
 
 ---
 
@@ -100,6 +100,7 @@ This two-step process ensures the GPU version of PyTorch is installed *before* t
     ```powershell
     pip install -r requirements.txt
     ```
+    *(Note: The latest library versions appear to have fixed the old PyTorch 2.x/pickle loading error, so no code fix is needed.)*
 
 ### D. Run the Simulation!
 
@@ -108,3 +109,5 @@ You are now ready. Simply run `main.py`. The script will automatically find and 
 ```powershell
 (venv) PS C:\...[your-project-path]...\yolov5> python main.py
 ```
+
+The system will start, and you will see the terminal log printing detection results and `matplotlib` windows popping up with your live charts.
