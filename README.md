@@ -108,3 +108,32 @@ You are now ready. Simply run `main.py`. The script will automatically find and 
 ```powershell
 (venv) PS C:\...[your-project-path]...\yolov5> python main.py
 ```
+
+### E. Manual Detection (Stand-alone Demo)
+
+If you want to bypass the full `main.py` simulation and test the YOLOv5 detection model on a single image or folder, you can call `detect.py` directly. This is useful for testing parameters in isolation.
+
+1.  **Activate your virtual environment:**
+    (Ensure you are in the correct project directory: `.../yolov5>`)
+    ```powershell
+    .\venv\Scripts\activate
+    ```
+
+2.  **Run the `detect.py` script:**
+    The command below uses the **fine-tuned parameters** (from the project documentation) for high-density traffic and **forces the script to use your GPU** (`--device 0`).
+
+    ```powershell
+    # Example: Run detection on all images inside the 'data/1.1/' folder
+    python detect.py --weights yolov5l.pt --imgsz 1280 1280 --conf-thres 0.10 --iou-thres 0.2 --device 0 --source data/1.1/
+    ```
+
+#### **Command Breakdown:**
+* `--weights yolov5l.pt`: Uses the "Large" YOLOv5 model, which was specified for this project. The script will automatically download these weights if they are missing.
+* `--imgsz 1280 1280`: Sets the image size to `1280x1280` for high-accuracy detection (upgraded from the default 640).
+* `--conf-thres 0.10`: Uses the custom low confidence threshold to detect more objects.
+* `--iou-thres 0.2`: Uses the custom low IOU threshold to distinguish between overlapping objects.
+* `--device 0`: **Forces the script to run on your primary NVIDIA GPU (CUDA:0)** for fast processing.
+* `--source data/1.1/`: Specifies the target folder to analyze.
+
+#### **Expected Output:**
+The script will run (very quickly on a GPU) and save the annotated output images (with bounding boxes) to a new folder, typically `runs/detect/exp`.
