@@ -45,7 +45,6 @@ When you run `main.py`, the system provides two real-time outputs: a detailed te
 | ![Live Terminal Log](demo_assets/demo-log.png) | ![Live Bar Chart](demo_assets/demo-piebarchart.png) | ![Live Pie Chart](demo_assets/demo-detection.png) |
 | A live feed showing vehicle counts, calculated volumes, and green light priority decisions. | A dynamic bar&pie chart showing the weighted traffic volume & Percentage for each road, updated every cycle. | A Yolov5 showing the object detection |
 
-*(**Catatan:** Pastikan Anda sudah membuat folder `demo_assets` dan mengunggah screenshot Anda ke sana seperti yang kita diskusikan sebelumnya agar gambar-gambar ini muncul.)*
 
 ---
 
